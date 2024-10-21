@@ -2,7 +2,10 @@ README.md
 
 # Welcome to CNETCITIES! 🌐
 
-**Are you lost?** 🌀
+# navigation
+# [hosts](https://fractalkey.github.io/hosts.html/)
+
+**Are you lost, or just wandering?** 🌀
 
 This project is an attempt to create a study guide for the **Computer Networking Technology (CNET)** program I'm enrolled in.
 
