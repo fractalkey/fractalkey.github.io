@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retro Geocities Style - Hosts File, DHCP, and DNS</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            color: #0000cc;
+            text-align: center;
+        }
+        h1 {
+            font-size: 36px;
+            text-shadow: 2px 2px #ff00ff;
+        }
+        h2 {
+            font-size: 28px;
+            color: #ff00cc;
+        }
+        p {
+            font-size: 18px;
+            margin: 20px;
+        }
+        .clipart {
+            width: 200px;
+            height: auto;
+            margin: 20px;
+        }
+        .footer {
+            margin-top: 50px;
+            font-size: 14px;
+            color: #660066;
+        }
+        marquee {
+            color: #ff00ff;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body background="/images/img3.jpg">
+    <marquee>Welcome to My Retro Geocities Page!</marquee>
+    <h1>Understanding the Hosts File, DHCP, and DNS</h1>
+    
+    <img src="/images/img4.jpg">
+    
+    <h2>What is the Hosts File?</h2>
+    <p>The hosts file is a simple text file used by an operating system to map hostnames to IP addresses. It allows you to override DNS settings and can be useful for local development.</p>
+    
+    <h2>What is DHCP?</h2>
+    <p>Dynamic Host Configuration Protocol (DHCP) is a network management protocol used to automate the process of configuring devices on IP networks. It assigns IP addresses and other network configuration parameters dynamically.</p>
+    
+    <h2>What is DNS?</h2>
+    <p>The Domain Name System (DNS) is the phonebook of the internet. It translates human-friendly domain names (like www.example.com) into IP addresses that computers use to identify each other on the network.</p>
+    
+    <img src="/images/img1.png" alt="Vaporwave Clipart" class="clipart">
+    
+    <div class="footer">
+        <p>the old web lives</p>
+        <p>Visit my <a href="https://fractalkey.xyz" style="color: #ff00cc;">other pages</a>!</p>
+    </div>
+</body>
+</html>
