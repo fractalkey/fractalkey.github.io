@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <title>Subnets Made Simple</title>
+    <style>
+        body {
+            background-color: #F0F8FF; /* Alice Blue */
+            color: #00008B; /* Dark Blue */
+            font-family: 'Comic Sans MS', cursive, sans-serif; /* Fun Font */
+            background-image: url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7');
+        }
+        table, th, td {
+            border: 1px solid #4B0082; /* Indigo */
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+        .wide-table {
+            width: 100%;
+            table-layout: fixed;
+        }
+        .wide-table th, .wide-table td {
+            width: 50px;
+        }
+        h1, h2, h3 {
+            text-align: center;
+            color: #FF4500; /* Orange Red */
+            text-shadow: 1px 1px 2px #8B4513; /* Saddle Brown */
+        }
+        p {
+            color: #32CD32; /* Lime Green */
+        }
+        ul {
+            color: #8B0000; /* Dark Red */
+        }
+        ol {
+            color: #008B8B; /* Dark Cyan */
+        }
+    </style>
+</head>
+<body>
+    <h1>Subnets Made Simple</h1>
+
+    <h2>Powers of Two</h2>
+    <table class="wide-table" border="1">
+        <tr>
+            <th>2^0</th>
+            <th>2^1</th>
+            <th>2^2</th>
+            <th>2^3</th>
+            <th>2^4</th>
+            <th>2^5</th>
+            <th>2^6</th>
+            <th>2^7</th>
+            <th>2^8</th>
+            <th>2^9</th>
+            <th>2^10</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>4</td>
+            <td>8</td>
+            <td>16</td>
+            <td>32</td>
+            <td>64</td>
+            <td>128</td>
+            <td>256</td>
+            <td>512</td>
+            <td>1024</td>
+        </tr>
+    </table>
+
+    <h2>My Own Formulae</h2>
+    <h3>Determining Bits to Borrow</h3>
+    <p>Ever wondered how many bits you need to borrow to create the subnets you desire? Here's the secret formula:</p>
+    <p><strong>2^b = r</strong>, where:</p>
+    <ul>
+        <li><strong>b</strong> = bits to borrow (because stealing bits is the network admin's pastime)</li>
+        <li><strong>r</strong> = required subnets (the magic number you're after)</li>
+    </ul>
+    <p>Solving for <strong>b</strong> is like finding the password to your network's secret club. Remember, if <strong>r</strong> isn't a power of 2, you might need to round up or reconsider your life choices.</p>
+
+    <h3>Calculating Usable Hosts</h3>
+    <p>Want to know how many devices you can plug into your freshly baked subnet? Here's how to do it:</p>
+    <ol>
+        <li>Start with the total bits in IPv4, which is <strong>32</strong>. (Because the universe runs on 32-bit magic.)</li>
+        <li>Subtract the new prefix length (your fancy subnet mask) to get the number of host bits, let's call it <strong>n</strong>.</li>
+        <li>Plug <strong>n</strong> into <strong>2^n - 2</strong> to find out how many usable hosts you've got. The "-2" accounts for the network address and broadcast address, because they're like the bouncers of your subnet party; they're there, but you don't want to use them for dancing.</li>
+    </ol>
+    <p>And there you have it, the magic formula for hosting a subnet party where everyone gets an IP!</p>
+
+    <h2>Classful Network Ranges</h2>
+    <table border="1">
+        <tr>
+            <th>Class</th>
+            <th>First Octet Range</th>
+        </tr>
+        <tr>
+            <td>A</td>
+            <td>1 - 126</td>
+        </tr>
+        <tr>
+            <td>B</td>
+            <td>128 - 191</td>
+        </tr>
+        <tr>
+            <td>C</td>
+            <td>192 - 223</td>
+        </tr>
+        <tr>
+            <td>Note</td>
+            <td>Class D (224-239) for Multicast, Class E (240-255) reserved.</td>
+        </tr>
+    </table>
+
+    <h2>Default Subnet Masks</h2>
+    <table border="1">
+        <tr>
+            <th>Class</th>
+            <th>Default Subnet Mask</th>
+            <th>Binary Representation</th>
+        </tr>
+        <tr>
+            <td>A</td>
+            <td>255.0.0.0</td>
+            <td>11111111.00000000.00000000.00000000</td>
+        </tr>
+        <tr>
+            <td>B</td>
+            <td>255.255.0.0</td>
+            <td>11111111.11111111.00000000.00000000</td>
+        </tr>
+        <tr>
+            <td>C</td>
+            <td>255.255.255.0</td>
+            <td>11111111.11111111.11111111.00000000</td>
+        </tr>
+    </table>
+<p>
+<h1>Subnetting Formulas</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Formula</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>2<sup>n</sup> - 2</td>
+                <td>Calculates the number of usable hosts in a subnet, where <em>n</em> is the number of host bits.</td>
+            </tr>
+            <tr>
+                <td>32 - Subnet Bits</td>
+                <td>Calculates the number of host bits remaining when subnetting. Subnet Bits = Total Bits (32) - Network Bits.</td>
+            </tr>
+            <tr>
+                <td>2<sup>h</sup></td>
+                <td>Calculates the total number of addresses in a subnet, where <em>h</em> is the number of host bits (including network and broadcast).</td>
+            </tr>
+            <tr>
+                <td>Subnet Mask in CIDR</td>
+                <td>Expresses the subnet mask in Classless Inter-Domain Routing (CIDR) notation (e.g., /24).</td>
+            </tr>
+            <tr>
+                <td>2<sup>n</sup> for Subnets</td>
+                <td>Calculates the number of subnets created by borrowing <em>n</em> bits from the host part.</td>
+            </tr>
+            <tr>
+                <td>Subnet Addressing</td>
+                <td>Each subnet's range includes a network address (first), usable addresses, and a broadcast address (last).</td>
+            </tr>
+        </tbody>
+    </table>
+<p>
+<title>Common CIDR Notations</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #000;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Common CIDR Notations</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>CIDR Notation</th>
+                <th>Subnet Mask</th>
+                <th>Usable Hosts</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>/8</td>
+                <td>255.0.0.0</td>
+                <td>16,777,214</td>
+            </tr>
+            <tr>
+                <td>/16</td>
+                <td>255.255.0.0</td>
+                <td>65,534</td>
+            </tr>
+            <tr>
+                <td>/24</td>
+                <td>255.255.255.0</td>
+                <td>254</td>
+            </tr>
+            <tr>
+                <td>/25</td>
+                <td>255.255.255.128</td>
+                <td>126</td>
+            </tr>
+            <tr>
+                <td>/26</td>
+                <td>255.255.255.192</td>
+                <td>62</td>
+            </tr>
+            <tr>
+                <td>/27</td>
+                <td>255.255.255.224</td>
+                <td>30</td>
+            </tr>
+            <tr>
+                <td>/28</td>
+                <td>255.255.255.240</td>
+                <td>14</td>
+            </tr>
+            <tr>
+                <td>/29</td>
+                <td>255.255.255.248</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>/30</td>
+                <td>255.255.255.252</td>
+                <td>2</td>
+            </tr>
+        </tbody>
+    </table>
+<p>
+<h1>Basic Subnetworking Concepts</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Concept</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Subnet</td>
+                <td>A logical subdivision of an IP network, designed to improve performance and security.</td>
+            </tr>
+            <tr>
+                <td>Subnet Mask</td>
+                <td>A 32-bit number used to differentiate between the network and host portions of an IP address.</td>
+            </tr>
+            <tr>
+                <td>CIDR (Classless Inter-Domain Routing)</td>
+                <td>A method for allocating IP addresses and routing IP packets that allows for variable-length subnet masking.</td>
+            </tr>
+            <tr>
+                <td>Broadcast Address</td>
+                <td>An IP address used to send data to all hosts on a subnet; the last address in the subnet.</td>
+            </tr>
+            <tr>
+                <td>Network Address</td>
+                <td>The first address in a subnet that identifies the subnet itself; all host bits are set to 0.</td>
+            </tr>
+            <tr>
+                <td>Usable Hosts</td>
+                <td>The number of valid IP addresses available for hosts within a subnet, calculated as 2<sup>h</sup> - 2.</td>
+            </tr>
+            <tr>
+                <td>VLSM (Variable Length Subnet Masking)</td>
+                <td>A technique that allows subnets of different sizes to be allocated within the same network.</td>
+            </tr>
+            <tr>
+                <td>Supernetting</td>
+                <td>A method of combining multiple smaller networks into a larger network to simplify routing.</td>
+            </tr>
+            <tr>
+                <td>Host Bits</td>
+                <td>The portion of an IP address that identifies specific devices within a subnet; determined by the subnet mask.</td>
+            </tr>
+        </tbody>
+    </table>
+<p>
+ <h1>Decimal to Binary Conversion Made Simple</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Decimal</th>
+                <th>Binary</th>
+                <th>Explanation</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>0</td>
+                <td>0000</td>
+                <td>0 in decimal is 0000 in 4-bit binary.</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>0001</td>
+                <td>1 in decimal is 0001 in 4-bit binary.</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>0010</td>
+                <td>2 in decimal is 0010 in 4-bit binary.</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>0011</td>
+                <td>3 in decimal is 0011 in 4-bit binary.</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>0100</td>
+                <td>4 in decimal is 0100 in 4-bit binary.</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>0101</td>
+                <td>5 in decimal is 0101 in 4-bit binary.</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>0110</td>
+                <td>6 in decimal is 0110 in 4-bit binary.</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>0111</td>
+                <td>7 in decimal is 0111 in 4-bit binary.</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>1000</td>
+                <td>8 in decimal is 1000 in 4-bit binary.</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>1001</td>
+                <td>9 in decimal is 1001 in 4-bit binary.</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>1010</td>
+                <td>10 in decimal is 1010 in 4-bit binary.</td>
+            </tr>
+            <tr>
+                <td>15</td>
+                <td>1111</td>
+                <td>15 in decimal is 1111 in 4-bit binary.</td>
+            </tr>
+            <tr>
+                <td>16</td>
+                <td>10000</td>
+                <td>16 in decimal is 10000 in 5-bit binary.</td>
+            </tr>
+            <tr>
+                <td>32</td>
+                <td>100000</td>
+                <td>32 in decimal is 100000 in 6-bit binary.</td>
+            </tr>
+            <tr>
+                <td>64</td>
+                <td>1000000</td>
+                <td>64 in decimal is 1000000 in 7-bit binary.</td>
+            </tr>
+            <tr>
+                <td>128</td>
+                <td>10000000</td>
+                <td>128 in decimal is 10000000 in 8-bit binary.</td>
+            </tr>
+            <tr>
+                <td>255</td>
+                <td>11111111</td>
+                <td>255 in decimal is 11111111 in 8-bit binary.</td>
+            </tr>
+        </tbody>
+    </table><p>
+<h1>Relevant Networking Terms</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Term</th>
+                <th>Definition</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>IP Address</td>
+                <td>A unique identifier for a device on a network, assigned in either IPv4 or IPv6 format.</td>
+            </tr>
+            <tr>
+                <td>Subnetting</td>
+                <td>The practice of dividing a larger network into smaller, more manageable sub-networks.</td>
+            </tr>
+            <tr>
+                <td>Classful Addressing</td>
+                <td>A method of dividing IP addresses into classes (A, B, C, etc.) based on fixed boundaries.</td>
+            </tr>
+            <tr>
+                <td>Classless Addressing</td>
+                <td>A more flexible way of allocating IP addresses without fixed boundaries, commonly using CIDR.</td>
+            </tr>
+            <tr>
+                <td>Default Gateway</td>
+                <td>The router that forwards traffic from a local network to external networks.</td>
+            </tr>
+            <tr>
+                <td>DHCP (Dynamic Host Configuration Protocol)</td>
+                <td>A network protocol that automatically assigns IP addresses to devices on a network.</td>
+            </tr>
+            <tr>
+                <td>DNS (Domain Name System)</td>
+                <td>A system that translates human-readable domain names into IP addresses.</td>
+            </tr>
+            <tr>
+                <td>NAT (Network Address Translation)</td>
+                <td>A technique used to translate private IP addresses to a public IP address for internet access.</td>
+            </tr>
+            <tr>
+                <td>Routing</td>
+                <td>The process of selecting paths in a network along which to send data packets.</td>
+            </tr>
+            <tr>
+                <td>TCP/IP (Transmission Control Protocol/Internet Protocol)</td>
+                <td>A suite of communication protocols used to interconnect network devices on the internet.</td>
+            </tr>
+            <tr>
+                <td>OSI Model</td>
+                <td>A conceptual framework used to understand network communication in seven layers.</td>
+            </tr>
+            <tr>
+                <td>Firewall</td>
+                <td>A security system that monitors and controls incoming and outgoing network traffic based on security rules.</td>
+            </tr>
+            <tr>
+                <td>VPN (Virtual Private Network)</td>
+                <td>A technology that creates a secure, encrypted connection over a less secure network, such as the internet.</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
