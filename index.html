@@ -7,18 +7,22 @@
     <style>
         /* General Body Styling */
         body {
-            background-color: #000000;
-            background-image: url('images/starry_night.jpg');  		
-            color: #FFFFFF;
-            font-family: 'Arial', sans-serif;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-start; /* Align everything to the left */
-            height: 100vh;
-            margin: 0;
-            padding-left: 5%; /* Add some padding on the left */
-        }
+    background-color: #000000;
+    background-image: url('images/starry_night.jpg'); /* Make sure this path is correct */
+    background-size: contain; /* Keeps the image from getting too large */
+    background-position: center center; /* Center the image horizontally and vertically */
+    background-repeat: no-repeat; /* Prevents tiling */
+    color: #FFFFFF;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    margin: 0;
+    padding-left: 5%; /* Add some padding on the left */
+}
+
 
         /* Main Title */
         h1 {
