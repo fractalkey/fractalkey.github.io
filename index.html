@@ -5,144 +5,125 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interstellar Linux</title>
     <style>
-        /* Global Styles */
+        /* General Body Styling */
         body {
-            background-color: #1a1a2e;
-            color: #e6e6fa;
+            background-color: #000000;
+            background-image: url('images/starry_night.jpg');  		
+            color: #FFFFFF;
             font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-image: url('images/starry_night.jpg'); /* Ensure this path is correct */
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed; /* Makes the background fixed on scroll */
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-            min-height: 100vh;
+            justify-content: center;
+            align-items: flex-start; /* Align everything to the left */
+            height: 100vh;
+            margin: 0;
+            padding-left: 5%; /* Add some padding on the left */
         }
 
-        /* Header */
-        header {
-            width: 100%;
-            padding: 1em;
-            background: transparent;
-            text-align: center;
-        }
-
+        /* Main Title */
         h1 {
-            font-size: 4em;
-            color: #f0f8ff;
-            text-shadow: 2px 2px 4px #000000;
-            margin: 0;
-        }
-
-        /* Navigation */
-        nav {
+            font-size: 7em; /* Super-sized title for impact */
             text-align: left;
-            padding: 1em;
-            margin-left: 50px;
-            max-width: 200px;
-            background: transparent;
+            margin: 0.2em 0;
         }
 
-        nav h2 {
-            margin: 0;
-            font-size: 1.5em;
+        /* Navigation Links */
+        .nav-links {
+            margin-top: 1em;
+            text-align: left;
+            font-size: 1.8em;
+            line-height: 1.8;
         }
 
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        nav a {
-            color: #e6e6fa;
+        .nav-links a {
+            color: #FFFFFF;
             text-decoration: none;
             display: block;
-            margin: 5px 0;
-            font-size: 1.2em;
         }
 
-        nav a:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-            padding: 3px;
+        /* Call to Action */
+        .cta {
+            margin-top: 2em;
+            font-size: 2.5em;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
         }
 
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 1em;
-            background: transparent;
+        .cta span {
+            margin-left: 0.5em;
+            text-decoration: underline;
         }
 
-        footer h2 {
-            margin: 0;
+        /* Social Links */
+        .social-links {
+            margin-top: 3em;
             font-size: 1.5em;
+            line-height: 1.5;
+            text-align: left;
         }
 
-        footer ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        footer a {
-            color: #e6e6fa;
+        .social-links a {
+            color: #FFFFFF;
             text-decoration: none;
-            margin: 0 10px;
+            display: block;
         }
 
-        /* Responsive Design */
+        /* Responsive adjustments */
         @media (max-width: 768px) {
+            body {
+                align-items: center; /* Center everything for mobile */
+                padding-left: 0;
+            }
+            h1 {
+                font-size: 4em;
+                text-align: center;
+            }
+            .nav-links, .social-links {
+                font-size: 1.2em;
+                text-align: center;
+            }
+            .cta {
+                font-size: 1.5em;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
             h1 {
                 font-size: 3em;
             }
-            
-            nav {
-                margin-left: 0;
-                text-align: center;
-                padding: 0.5em;
+            .nav-links, .social-links {
+                font-size: 1em;
             }
-
-            nav h2, footer h2 {
+            .cta {
                 font-size: 1.2em;
-            }
-
-            nav ul, footer ul {
-                text-align: center;
-                padding: 0;
-            }
-
-            nav a {
-                font-size: 1em;
-            }
-
-            footer a {
-                font-size: 1em;
-                margin: 5px;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Interstellar Linux</h1>
-    </header>
-    <nav>
-        <h2>Navigation</h2>
-        <ul>
-            <li><a href="/linux.html">/why interstellar linux?</a></li>
-            <li><a href="/blog.html">/blog</a></li>
-            <li><a href="/about.html">/about</a></li>
-        </ul>
-    </nav>
-    <footer>
-        <h2>Social</h2>
-        <ul>
-            <li><a href="https://x.com/fractalkey">Twitter</a></li>
-            <li><a href="https://bsky.app/profile/interstellarlinux.bsky.social">Bluesky</a></li>
-            <li><a href="https://fractalkey.github.io/projects.html">GitHub</a></li>
-        </ul>
-    </footer>
+    <h1>INTERSTELLAR LINUX</h1>
+
+    <!-- Navigation Links -->
+    <div class="nav-links">
+        <a href="/navigation.html">/navigation</a>
+        <a href="/linux.html">/linux?</a>
+        <a href="/blog.html">/blog</a>
+        <a href="/about.html">/about</a>
+    </div>
+
+    <!-- Call to Action -->
+    <div class="cta">
+        <span>&gt;</span> <!-- Greater-than symbol for retro look -->
+        <span>GO BOLDLY</span>
+    </div>
+
+    <!-- Social Links -->
+    <div class="social-links">
+        <p>obligatory socials:<br>
+        <a href="https://x.com/fractalkey">twitter</a>
+        <a href="https://bluesky.app/profile/interstellarlinux.bsky.social">bluesky</a>
+        <a href="https://
 </body>
 </html>
