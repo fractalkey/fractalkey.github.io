@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>interstellar linux</title>
+    <title>Interstellar Linux</title>
     <style>
         body {
             background-color: #1a1a2e;
@@ -11,7 +11,7 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-image: url('/images/starry_night.jpg');
+            background-image: url('images/starry_night.jpg'); /* Ensure this path is correct */
             background-size: cover;
             background-blend-mode: overlay;
             display: flex;
@@ -39,6 +39,14 @@
             margin-left: 50px; 
             max-width: 200px; 
         }
+        nav h2 {
+            margin: 0; /* Remove default margin */
+            font-size: 2em; /* Adjust heading size */
+        }
+        nav ul {
+            list-style-type: none; /* Remove bullet points */
+            padding: 0; /* Remove default padding */
+        }
         nav a {
             color: #e6e6fa;
             text-decoration: none;
@@ -57,6 +65,19 @@
             width: 100%;
             background: transparent;
         }
+        footer h2 {
+            margin: 0; /* Remove default margin */
+            font-size: 2em; /* Adjust heading size */
+        }
+        footer ul {
+            list-style-type: none; /* Remove bullet points */
+            padding: 0; /* Remove default padding */
+            text-align: right; /* Align links to the right */
+        }
+        footer a {
+            color: #e6e6fa;
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
@@ -64,20 +85,20 @@
         <h1>Interstellar Linux</h1>
     </header>
     <nav>
-        <div>
-        navigation<br>
-            <a href="/linux.html">/why interstellar linux?</a><br>
-            <a href="/blog.html">/blog</a><br>
-            <a href="/about.html">/about</a>
-        </div>
+        <h2>Navigation</h2>
+        <ul>
+            <li><a href="/linux.html">/why interstellar linux?</a></li>
+            <li><a href="/blog.html">/blog</a></li>
+            <li><a href="/about.html">/about</a></li>
+        </ul>
     </nav>
     <footer>
-        <p style="text-align: right; padding-right: 20px;">
-            /social<br>
-            <a href="https://x.com/fractalkey">twitter</a><br>
-            <a href="https://bsky.app/profile/interstellarlinux.bsky.social">bluesky</a><br>
-            <a href="https://fractalkey.github.io/projects.html">github</a>
-        </p>
+        <h2>Social</h2>
+        <ul>
+            <li><a href="https://x.com/fractalkey">Twitter</a></li>
+            <li><a href="https://bsky.app/profile/interstellarlinux.bsky.social">Bluesky</a></li>
+            <li><a href="https://fractalkey.github.io/projects.html">GitHub</a></li>
+        </ul>
     </footer>
 </body>
 </html>
