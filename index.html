@@ -1,31 +1,29 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Interstellar Linux</title>
     <style>
         /* General Body Styling */
         body {
-    background-color: #000000;
-    background-image: url('images/starry_night.jpg'); /* Update with correct path */
-    background-size: cover; /* Ensures the image covers the viewport */
-    background-position: center; /* Centers the image */
-    background-repeat: no-repeat; /* Prevents tiling */
-    background-attachment: fixed; /* Keeps the image fixed as you scroll */
-    color: #FFFFFF;
-    font-family: 'Arial', sans-serif;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    height: 100vh;
-    margin: 0;
-    padding-left: 5%; /* Adjusts padding for layout */
-}
-
-}
-
+            background-color: #000000;
+            background-image: url('images/starry_night.jpg'); /* Update with correct path */
+            background-size: cover; /* Ensures the image covers the viewport */
+            background-position: center; /* Centers the image */
+            background-repeat: no-repeat; /* Prevents tiling */
+            background-attachment: fixed; /* Keeps the image fixed as you scroll */
+            color: #FFFFFF;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start; /* Left-aligns on desktop */
+            height: 100vh;
+            margin: 0;
+            padding-left: 5%; /* Adjusts padding for desktop layout */
+            box-sizing: border-box;
+        }
 
         /* Main Title */
         h1 {
@@ -46,6 +44,7 @@
             color: #FFFFFF;
             text-decoration: none;
             display: block;
+            margin: 0.3em 0; /* Spacing between links */
         }
 
         /* Call to Action */
@@ -55,6 +54,7 @@
             font-weight: bold;
             display: flex;
             align-items: center;
+            text-align: left;
         }
 
         .cta span {
@@ -74,37 +74,42 @@
             color: #FFFFFF;
             text-decoration: none;
             display: block;
+            margin: 0.3em 0;
         }
 
-        /* Responsive adjustments */
+        /* Responsive adjustments for tablets and smaller screens */
         @media (max-width: 768px) {
             body {
-                align-items: center; /* Center everything for mobile */
-                padding-left: 0;
+                align-items: center; /* Center-aligns everything for tablet and smaller */
+                padding-left: 0; /* Remove padding on smaller screens */
             }
             h1 {
                 font-size: 4em;
                 text-align: center;
             }
             .nav-links, .social-links {
-                font-size: 1.2em;
+                font-size: 1.4em;
                 text-align: center;
             }
             .cta {
-                font-size: 1.5em;
+                font-size: 1.8em;
                 text-align: center;
             }
         }
 
+        /* Further adjustments for very small screens */
         @media (max-width: 480px) {
             h1 {
                 font-size: 3em;
             }
             .nav-links, .social-links {
-                font-size: 1em;
+                font-size: 1.2em;
             }
             .cta {
-                font-size: 1.2em;
+                font-size: 1.4em;
+            }
+            body {
+                padding: 1em; /* Extra padding for a cleaner look on small screens */
             }
         }
     </style>
@@ -132,5 +137,6 @@
         <a href="https://x.com/fractalkey">twitter</a>
         <a href="https://bluesky.app/profile/interstellarlinux.bsky.social">bluesky</a>
         <a href="https://fractalkey.github.io/projects.html">github</a>
+    </div>
 </body>
 </html>
