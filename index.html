@@ -1,144 +1,114 @@
-<!DOCTYPE html> 
+HTML
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Interstellar Linux</title>
-    <style>
-        /* General Body Styling */
-        body {
-            background-color: #000000;
-            background-image: url('images/starry_night.jpg'); /* Update with correct path */
-            background-size: cover; /* Ensures the image covers the viewport */
-            background-position: center center; /* Centers the image both horizontally and vertically */
-            background-repeat: no-repeat; /* Prevents tiling */
-            background-attachment: fixed; /* Keeps the image fixed as you scroll */
-            color: #FFFFFF;
-            font-family: 'Arial', sans-serif;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-start; /* Left-aligns on desktop */
-            height: 100vh;
-            margin: 0;
-            padding-left: 5%; /* Adjusts padding for desktop layout */
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">   
 
-        /* Main Title */
-        h1 {
-            font-size: 7em; /* Super-sized title for impact */
-            text-align: left;
-            margin: 0.2em 0;
-        }
+  <title>Interstellar Linux</title>
+  <style>
+    /* General Body Styling */
+    body {
+      background-color: #000000;
+      background-image: url('images/starry_night.jpg'); /* Update with correct path */
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      color: #FFFFFF;   
 
-        /* Navigation Links */
-        .nav-links {
-            margin-top: 1em;
-            text-align: left;
-            font-size: 1.8em;
-            line-height: 1.8;
-        }
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      flex-direction: column;   
 
-        .nav-links a {
-            color: #FFFFFF;
-            text-decoration: none;
-            display: block;
-            margin: 0.3em 0; /* Spacing between links */
-        }
+      justify-content: center;
+      align-items: flex-start;
+      height: 100vh;
+      margin: 0;
+      padding-left: 5%;
+      box-sizing: border-box;
+    }
 
-        /* Call to Action */
-        .cta {
-            margin-top: 2em;
-            font-size: 2.5em;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            text-align: left;
-        }
+    /* Main Title */
+    h1 {
+      font-size: 7em; /* Super-sized title for impact */
+      text-align: left;
+      margin: 0.2em 0;
+    }
 
-        .cta span {
-            margin-left: 0.5em;
-            text-decoration: underline;
-        }
+    /* Navigation Links */
+    .nav-links, .social-links {
+      margin-top: 1em;
+      text-align: left;
+      font-size: 1.8em;
+      line-height: 1.8;
+    }
 
-        /* Social Links */
-        .social-links {
-            margin-top: 3em;
-            font-size: 1.5em;
-            line-height: 1.5;
-            text-align: left;
-        }
+    .nav-links a, .social-links a {
+      color: #FFFFFF;
+      text-decoration: none;
+      display: block;
+      margin: 0.3em 0; /* Spacing between links */
+    }
 
-        .social-links a {
-            color: #FFFFFF;
-            text-decoration: none;
-            display: block;
-            margin: 0.3em 0;
-        }
+    /* Call to Action */
+    .cta {
+      margin-top: 2em;
+      font-size: 2.5em;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      text-align: left;
+    }
 
-        /* Responsive adjustments for tablets and smaller screens */
-        @media (max-width: 768px) {
-            body {
-                align-items: center; /* Center-aligns everything for tablet and smaller */
-                padding-left: 0; /* Remove padding on smaller screens */
-                background-attachment: scroll; /* Allow background to scroll for mobile devices */
-            }
-            h1 {
-                font-size: 4em;
-                text-align: center;
-            }
-            .nav-links, .social-links {
-                font-size: 1.4em;
-                text-align: center;
-            }
-            .cta {
-                font-size: 1.8em;
-                text-align: center;
-            }
-        }
+    .cta span {
+      margin-left: 0.5em;
+      text-decoration: underline;
+    }
 
-        /* Further adjustments for very small screens */
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 3em;
-            }
-            .nav-links, .social-links {
-                font-size: 1.2em;
-            }
-            .cta {
-                font-size: 1.4em;
-            }
-            body {
-                padding: 1em; /* Extra padding for a cleaner look on small screens */
-                background-size: auto 100%; /* Make background height fit screen without shrinking */
-            }
-        }
-    </style>
+    /* Responsive adjustments for tablets and smaller screens */
+    @media (max-width: 768px) {
+      body {
+        align-items: center; /* Center-aligns everything for tablet and smaller */
+        padding-left: 0; /* Remove padding on smaller screens */
+        background-attachment: scroll; /* Allow background to scroll for mobile devices */
+      }
+
+      h1 {
+        font-size: 4em;
+        text-align: center;
+      }
+
+      .nav-links, .social-links {
+        font-size: 1.4em;
+        text-align: center;
+      }
+
+      .cta {
+        font-size: 1.8em;
+        text-align: center;
+      }
+    }
+
+    /* Further adjustments for very small screens */
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 3em;
+      }
+
+      .nav-links, .social-links {
+        font-size: 1.2em;
+      }
+
+      .cta {
+        font-size: 1.4em;
+      }
+
+      body {
+        padding: 1em 0; /* Extra padding for a cleaner look on small screens */
+        background-size: auto 100%; /* Make background height fit screen without shrinking */
+      }
+    }
+  </style>
 </head>
-<body>
-    <h1>INTERSTELLAR LINUX</h1>
-
-    <!-- Navigation Links -->
-    <div class="nav-links">
-        <a href="/navigation.html">/navigation</a>
-        <a href="/linux.html">/linux?</a>
-        <a href="/blog.html">/blog</a>
-        <a href="/about.html">/about</a>
-    </div>
-
-    <!-- Call to Action -->
-    <div class="cta">
-        <span>&gt;</span> <!-- Greater-than symbol for retro look -->
-        <span>GO BOLDLY</span>
-    </div>
-
-    <!-- Social Links -->
-    <div class="social-links">
-        <p>obligatory socials:<br>
-        <a href="https://x.com/fractalkey">twitter</a>
-        <a href="https://bluesky.app/profile/interstellarlinux.bsky.social">bluesky</a>
-        <a href="https://fractalkey.github.io/projects.html">github</a>
-    </div>
-</body>
-</html>
+<
